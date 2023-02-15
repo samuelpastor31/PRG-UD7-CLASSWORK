@@ -1,5 +1,6 @@
-package actividad11;
-public class Administrativo extends Empleado{
+package actividad11.tiposempleados;
+
+public class Administrativo extends Empleado {
 
     private int despacho;
     private int numeroFax;

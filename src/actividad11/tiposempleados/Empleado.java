@@ -1,6 +1,5 @@
 
-package actividad11;
-import java.time.LocalDate;
+package actividad11.tiposempleados;
 
 abstract public class Empleado {
 
@@ -38,6 +37,10 @@ abstract public class Empleado {
 
     public String getDni() {
         return dni;
+    }
+
+    public double getSalario() {
+        return salario;
     }
 
     public boolean equals(Empleado empleado){

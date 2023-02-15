@@ -1,12 +1,14 @@
-package actividad11;
-import java.util.Arrays;
+package actividad11.tiposempleados;
+import actividad11.Cliente;
+import actividad11.Coche;
+import actividad11.tiposempleados.Empleado;
 
-public class Vendedor extends Empleado{
+public class Vendedor extends Empleado {
 
 
     private Coche coche;
     private String areaDeVenta;
-    private Cliente [] listaClientes;
+    private Cliente[] listaClientes;
     private int contadorClientes = 0;
     private double comision;
 

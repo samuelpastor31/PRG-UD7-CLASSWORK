@@ -55,24 +55,28 @@ public class Empresa {
         }
     }
 
-    public void visualizarListaVendedores(Empleado empleado){
+    public void visualizarListaVendedores(){
+        System.out.println("---Vendedores---");
         for (int i = 0; i <empleados.length ; i++) {
             if (empleados[i] != null) {
-                if (empleado instanceof Vendedor) {
+                if (empleados[i] instanceof Vendedor) {
                     System.out.println(empleados[i].toString());
                 }
             }
         }
+        System.out.println("--------------");
     }
 
-    public void visualizarListaAdministrativos(Empleado empleado){
+    public void visualizarListaAdministrativos(){
+        System.out.println("---Administrativos---");
         for (int i = 0; i <empleados.length ; i++) {
             if (empleados[i] != null) {
-                if (empleado instanceof Administrativo) {
+                if (empleados[i] instanceof Administrativo) {
                     System.out.println(empleados[i].toString());
                 }
             }
         }
+        System.out.println("---------------------");
     }
 
     public double totalMensualSalarios(){
