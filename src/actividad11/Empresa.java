@@ -12,27 +12,27 @@ public class Empresa {
         this.empleados = new Empleado[20];
     }
 
-    public void anyadirEmpleados(Empleado empleado){
-        if (empleados.length<=20) {
-            for (int i = 0; i < empleados.length; i++) {
-                if (empleados[i]!=null) {
-                    if (empleados[i].equals(empleado.getDni())) {
-                        return;
-                    }
+    public void anyadirEmpleados(Empleado empleado) {
+
+        for (int i = 0; i < empleados.length; i++) {
+            if (empleados[i] != null) {
+                if (empleados[i].tieneEsteDni(empleado.getDni())) {
+                    return;
                 }
-                if (empleados[i] == null) {
-                    empleados[i] = empleado;
-                    if (empleados[i].equals(empleado.getDni())) {
-                        return;
-                    }
-                }
+            }
+        }
+
+        for (int i = 0; i < empleados.length; i++) {
+            if (empleados[i] == null) {
+                empleados[i] = empleado;
+                return;
             }
         }
     }
 
     public void borrarEmpleado(String dni){
         for (int i = 0; i <empleados.length ; i++) {
-            if (empleados[i].equals(dni)){
+            if (empleados[i].tieneEsteDni(dni)){
                 empleados[i]=null;
             }
         }
@@ -40,8 +40,8 @@ public class Empresa {
 
     public void visualizarEmpleado(String dni){
         for (int i = 0; i <empleados.length ; i++) {
-            if (empleados[i].equals(dni)){
-                System.out.println(empleados[i].toString());
+            if (empleados[i].tieneEsteDni(dni)){
+                System.out.println(empleados[i]);
             }
         }
     }
@@ -50,7 +50,7 @@ public class Empresa {
         System.out.println("------ Todos Los empleados --------");
         for (int i = 0; i <empleados.length ; i++) {
             if (empleados[i] != null) {
-                System.out.println(empleados[i].toString());
+                System.out.println(empleados[i]);
             }
         }
     }

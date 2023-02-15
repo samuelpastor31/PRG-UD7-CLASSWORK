@@ -31,9 +31,7 @@ abstract public class Empleado {
                 '}';
     }
 
-    public void incrementarSalario(){
-        this.salario = this.salario + (this.salario*0.02);
-    }
+    public abstract void incrementarSalario();
 
     public String getDni() {
         return dni;
@@ -43,11 +41,17 @@ abstract public class Empleado {
         return salario;
     }
 
-    public boolean equals(Empleado empleado){
-        return empleado.getDni().equals(this.dni);
+    @Override
+    public boolean equals(Object obj) {
+        if (obj instanceof Empleado){
+            if (tieneEsteDni(((Empleado)obj).dni)){
+                return true;
+            }
+        }
+        return false;
     }
 
-    public boolean equals(String dni){
+    public boolean tieneEsteDni(String dni){
         return this.dni.equals(dni);
     }
 }

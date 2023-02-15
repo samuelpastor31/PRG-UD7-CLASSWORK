@@ -24,7 +24,6 @@ public class Vendedor extends Empleado {
     @Override
     public void incrementarSalario() {
         super.salario = super.salario + (super.salario * 0.1);
-
     }
 
 
